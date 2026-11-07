@@ -4,6 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # VITE_* values are intentionally inlined into the client bundle by Vite.
+  # The Supabase publishable/anon key, project URL and Sentry DSN are public by
+  # design (data access is enforced by RLS), so exclude only these keys from
+  # secrets scanning. All other values are still scanned.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY,VITE_SENTRY_DSN,VITE_APP_ENV"
 
 [[headers]]
   for = "/*"
