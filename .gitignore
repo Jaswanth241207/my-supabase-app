@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+coverage
+playwright-report
+test-results
+supabase/.branches
+supabase/.temp
+.vscode/*
+!.vscode/extensions.json
